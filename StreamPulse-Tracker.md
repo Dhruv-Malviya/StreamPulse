@@ -74,11 +74,11 @@ One row per build day. "Explained?" means you said the checkpoint's Explain-it a
 
 | Date | Phase | Day  | Checkpoint built                 | Done? | Explained? | Streak | Notes / what was hard |
 | ---- | ----- | ---- | -------------------------------- | ----- | ---------- | ------ | --------------------- |
-|      | 0     | 1    | Restructure repo                 | [ ]   | [ ]        |        |                       |
-|      | 0     | 2    | Dev env + survival kit           | [ ]   | [ ]        |        |                       |
-|      | 1     | 3    | Scaffold user-service (.NET)     | [ ]   | [ ]        |        |                       |
-|      | 1     | 4    | Multi-stage build, user-service  | [ ]   | [ ]        |        |                       |
-|      | 1     | 5    | Scaffold catalog-service (.NET)  | [ ]   | [ ]        |        |                       |
+|      | 0     | 1    | Restructure repo                 | [x]   | [x]        | 1      |                       |
+|      | 0     | 2    | Dev env + survival kit           | [x]   | [x]        | 2      |                       |
+|      | 1     | 3    | Scaffold user-service (.NET)     | [x]   | [x]        | 3      |                       |
+|      | 1     | 4    | Multi-stage build, user-service  | [x]   | [x]        | 4      |                       |
+|      | 1     | 5    | Scaffold catalog-service (.NET)  | [x]   | [x]        | 5      |                       |
 |      | 1     | W2D1 | Scaffold ingest-service (Python) | [ ]   | [ ]        |        |                       |
 |      | 1     | W2D2 | docker-compose.yml               | [ ]   | [ ]        |        |                       |
 |      | 1     | W2D3 | Add PostgreSQL                   | [ ]   | [ ]        |        |                       |
