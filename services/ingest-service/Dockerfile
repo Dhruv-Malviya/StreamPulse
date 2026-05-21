@@ -25,9 +25,13 @@ FROM python:3.12-slim AS runtime
 
 WORKDIR /app
 
+USER root
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 # Run as a non-root user — same discipline as the .NET services.
 RUN adduser --disabled-password --gecos "" appuser
 USER appuser
+
 
 # Pull in the pre-built virtualenv from the builder stage.
 COPY --from=builder /opt/venv /opt/venv
