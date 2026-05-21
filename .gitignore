@@ -1,0 +1,101 @@
+# ==========================================
+# 1. Environment, Secrets, & Logs (CRITICAL)
+# ==========================================
+.env
+.env.local
+*.pem
+*.key
+secrets.yaml
+
+# Log Files
+*.log
+logs/
+
+# ==========================================
+# 2. General & System Caches
+# ==========================================
+.cache/
+.eslintcache
+.stylelintcache
+.sass-cache/
+Thumbs.db
+.DS_Store
+
+# ==========================================
+# 3. .NET (C#)
+# ==========================================
+# Build outputs and cache
+[Bb]in/
+[Oo]bj/
+.vs/
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ==========================================
+# 4. Python
+# ==========================================
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# ==========================================
+# 5. VS Code
+# ==========================================
+.vscode/*
+# Allow shared project settings if needed:
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ==========================================
+# 6. Docker & Containerization
+# ==========================================
+# Ignore local development data volumes
+.docker-data/
+docker-compose.override.yml
+
+# ==========================================
+# 7. Kubernetes & Helm
+# ==========================================
+# Helm dependency charts and builds
+charts/*.tgz
+charts/charts/
+# Local cluster tokens/configs
+.kube/config
+kubeconfig
+
+# ==========================================
+# 8. Protocol Buffers (Protobuf)
+# ==========================================
+# Always track your source .proto files, but ignore generated code.
+**/generated_pb2.py
+**/generated_pb2_grpc.py
+**/Protobuf/Generated/

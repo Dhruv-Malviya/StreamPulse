@@ -7,6 +7,7 @@ param(
 $defaults = @{
     "user"    = 8080
     "catalog" = 8081
+    "ingest" = 8082
 }
 
 if ($port -eq 0) { $port = $defaults[$service] }
