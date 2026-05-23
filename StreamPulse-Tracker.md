@@ -9,12 +9,12 @@ _Your logbook. The roadmap (`StreamPulse-Roadmap.md`) tells you what to do; this
 |                            |                                                                                                         |
 | -------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Start date                 | 19/05/26                                                                                                |
-| Current phase              | Phase 0 — Orientation                                                                                   |
-| Current week               | Week 1                                                                                                  |
-| Badges earned              | 0 / 15                                                                                                  |
-| Skill tree tiers unlocked  | 0 / 42 (13 tech branches × 3 tiers, + 3 DSA tiers)                                                      |
-| Build-day streak (current) | 0                                                                                                       |
-| Build-day streak (best)    | 0                                                                                                       |
+| Current phase              | Phase 2 — PostgreSQL                                                                                    |
+| Current week               | Week 3                                                                                                  |
+| Badges earned              | 1 / 15                                                                                                  |
+| Skill tree tiers unlocked  | 3 / 42 (13 tech branches × 3 tiers, + 3 DSA tiers)                                                      |
+| Build-day streak (current) | 11                                                                                                      |
+| Build-day streak (best)    | 11                                                                                                      |
 | DSA problems solved        | 0                                                                                                       |
 | Title                      | _Initiate_ — earn 5 badges for _Builder_, 10 for _Systems Engineer_, all 15 for _StreamPulse Architect_ |
 
@@ -24,23 +24,23 @@ Update this block whenever something changes. The streak is the number that pred
 
 ## Mastery badges
 
-| #   | Badge                 | Branch                   | Phase     | Earned? | Date | Graded by mentor? |
-| --- | --------------------- | ------------------------ | --------- | ------- | ---- | ----------------- |
-| 1   | Container Captain     | Containers               | 1         | [ ]     |      | [ ]               |
-| 2   | Schema Smith          | Relational Data          | 2         | [ ]     |      | [ ]               |
-| 3   | Edge Warden           | Edge & Networking        | 3         | [ ]     |      | [ ]               |
-| 4   | Contract Broker       | Service Contracts / gRPC | 4         | [ ]     |      | [ ]               |
-| 5   | Cache Conjurer        | Caching & Coordination   | 5         | [ ]     |      | [ ]               |
-| 6   | Stream Lord           | Event Streaming          | 6         | [ ]     |      | [ ]               |
-| 7   | Realtime Ranger       | Real-Time / WebSockets   | 7         | [ ]     |      | [ ]               |
-| 8   | Index Oracle          | Search                   | 8         | [ ]     |      | [ ]               |
-| 9   | Object Keeper         | Object Storage           | 9         | [ ]     |      | [ ]               |
-| 10  | Wide-Column Warden    | Wide-Column NoSQL        | 10        | [ ]     |      | [ ]               |
-| 11  | Cluster Commander     | Orchestration            | 11        | [ ]     |      | [ ]               |
-| 12  | Chart Captain         | Packaging / Helm         | 12        | [ ]     |      | [ ]               |
-| 13  | Signal Seer           | Observability            | 13        | [ ]     |      | [ ]               |
-| 14  | Pattern Master        | Algorithms               | DSA track | [ ]     |      | [ ]               |
-| 15  | StreamPulse Architect | System Design            | 14        | [ ]     |      | [ ]               |
+| #   | Badge                 | Branch                   | Phase     | Earned? | Date    | Graded by mentor? |
+| --- | --------------------- | ------------------------ | --------- | ------- | ------- | ----------------- |
+| 1   | Container Captain     | Containers               | 1         | [x]     | 22/5/26 | [x]               |
+| 2   | Schema Smith          | Relational Data          | 2         | [ ]     |         | [ ]               |
+| 3   | Edge Warden           | Edge & Networking        | 3         | [ ]     |         | [ ]               |
+| 4   | Contract Broker       | Service Contracts / gRPC | 4         | [ ]     |         | [ ]               |
+| 5   | Cache Conjurer        | Caching & Coordination   | 5         | [ ]     |         | [ ]               |
+| 6   | Stream Lord           | Event Streaming          | 6         | [ ]     |         | [ ]               |
+| 7   | Realtime Ranger       | Real-Time / WebSockets   | 7         | [ ]     |         | [ ]               |
+| 8   | Index Oracle          | Search                   | 8         | [ ]     |         | [ ]               |
+| 9   | Object Keeper         | Object Storage           | 9         | [ ]     |         | [ ]               |
+| 10  | Wide-Column Warden    | Wide-Column NoSQL        | 10        | [ ]     |         | [ ]               |
+| 11  | Cluster Commander     | Orchestration            | 11        | [ ]     |         | [ ]               |
+| 12  | Chart Captain         | Packaging / Helm         | 12        | [ ]     |         | [ ]               |
+| 13  | Signal Seer           | Observability            | 13        | [ ]     |         | [ ]               |
+| 14  | Pattern Master        | Algorithms               | DSA track | [ ]     |         | [ ]               |
+| 15  | StreamPulse Architect | System Design            | 14        | [ ]     |         | [ ]               |
 
 ---
 
@@ -50,7 +50,7 @@ Mark a tier `[x]` when its checkpoints are done. A branch's badge is earned at T
 
 | Branch                     | Tier I — Foundations                             | Tier II — Practitioner | Tier III — Master |
 | -------------------------- | ------------------------------------------------ | ---------------------- | ----------------- |
-| Containers                 | [ ]                                              | [ ]                    | [ ]               |
+| Containers                 | [x]                                              | [x]                    | [x]               |
 | Relational Data            | [ ]                                              | [ ]                    | [ ]               |
 | Edge & Networking          | [ ]                                              | [ ]                    | [ ]               |
 | Service Contracts / gRPC   | [ ]                                              | [ ]                    | [ ]               |
@@ -82,8 +82,17 @@ One row per build day. "Explained?" means you said the checkpoint's Explain-it a
 |      | 1     | W2D1 | Scaffold ingest-service (Python) | [x]   | [x]        | 6      |                       |
 |      | 1     | W2D2 | docker-compose.yml               | [x]   | [x]        | 7      |                       |
 |      | 1     | W2D3 | Add PostgreSQL                   | [x]   | [x]        | 8      |                       |
-|      | 1     | W2D4 | Health checks + memory limits    | [ ]   | [ ]        |        |                       |
-|      | 1     | W2D5 | trivy scan + Boss Check          | [ ]   | [ ]        |        |                       |
+|      | 1     | W2D4 | Health checks + memory limits    | [x]   | [x]        | 9      |                       |
+|      | 1     | W2D5 | trivy scan + Boss Check          | [x]   | [x]        | 10     |                       |
+|      | 2     | W3D1 |                                  | [x]   | [x]        | 11     |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+|      |       |      |                                  | [ ]   | [ ]        |        |                       |
 |      |       |      |                                  | [ ]   | [ ]        |        |                       |
 
 _Copy the blank row as you go. From Phase 5 on, ask the mentor to expand the week into daily detail and add those rows here._
