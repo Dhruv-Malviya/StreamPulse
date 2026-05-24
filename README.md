@@ -140,4 +140,20 @@ INDEXES:
 
 CONSTRAINT: "CK_VideoAsset_VideoAssetStatus" (video_asset_status >= 0 AND video_asset_status <= 3)
 
+
+upload_jobs
+─────────────────────────────────────────────────────────
+upload_job_id            INT              PRIMARY KEY
+channel_id               INT              NOT NULL             -- FK → channels(channel_id), not enforced (cross-service boundary)
+upload_job_status        SMALLINT         NOT NULL  DEFAULT 0  -- 0 = pending, 1 = uploading, 2 = uploaded, 3 = processing, 4 = completed, 5 = failed
+upload_job_blob_path     VARCHAR(2000)    NOT NULL             -- object storage key, not a presigned URL
+upload_job_title         VARCHAR(100)     NOT NULL
+upload_job_description   VARCHAR(2000)    NULL
+upload_job_thumbnail_url VARCHAR(2000)   NULL
+created_at               TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+modified_at              TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+
+INDEX:      idx_upload_jobs_modified_at ON upload_jobs(modified_at) WHERE upload_job_status IN (1, 2, 3)
+CONSTRAINT: CK_UploadJob_UploadJobStatus (upload_job_status >= 0 AND upload_job_status <= 5)
+
 ```
