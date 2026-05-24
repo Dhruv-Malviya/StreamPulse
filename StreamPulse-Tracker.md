@@ -13,8 +13,8 @@ _Your logbook. The roadmap (`StreamPulse-Roadmap.md`) tells you what to do; this
 | Current week               | Week 3                                                                                                  |
 | Badges earned              | 1 / 15                                                                                                  |
 | Skill tree tiers unlocked  | 3 / 42 (13 tech branches × 3 tiers, + 3 DSA tiers)                                                      |
-| Build-day streak (current) | 11                                                                                                      |
-| Build-day streak (best)    | 11                                                                                                      |
+| Build-day streak (current) | 12                                                                                                      |
+| Build-day streak (best)    | 12                                                                                                      |
 | DSA problems solved        | 0                                                                                                       |
 | Title                      | _Initiate_ — earn 5 badges for _Builder_, 10 for _Systems Engineer_, all 15 for _StreamPulse Architect_ |
 
@@ -72,28 +72,28 @@ Mark a tier `[x]` when its checkpoints are done. A branch's badge is earned at T
 
 One row per build day. "Explained?" means you said the checkpoint's Explain-it answer out loud.
 
-| Date | Phase | Day  | Checkpoint built                 | Done? | Explained? | Streak | Notes / what was hard |
-| ---- | ----- | ---- | -------------------------------- | ----- | ---------- | ------ | --------------------- |
-|      | 0     | 1    | Restructure repo                 | [x]   | [x]        | 1      |                       |
-|      | 0     | 2    | Dev env + survival kit           | [x]   | [x]        | 2      |                       |
-|      | 1     | 3    | Scaffold user-service (.NET)     | [x]   | [x]        | 3      |                       |
-|      | 1     | 4    | Multi-stage build, user-service  | [x]   | [x]        | 4      |                       |
-|      | 1     | 5    | Scaffold catalog-service (.NET)  | [x]   | [x]        | 5      |                       |
-|      | 1     | W2D1 | Scaffold ingest-service (Python) | [x]   | [x]        | 6      |                       |
-|      | 1     | W2D2 | docker-compose.yml               | [x]   | [x]        | 7      |                       |
-|      | 1     | W2D3 | Add PostgreSQL                   | [x]   | [x]        | 8      |                       |
-|      | 1     | W2D4 | Health checks + memory limits    | [x]   | [x]        | 9      |                       |
-|      | 1     | W2D5 | trivy scan + Boss Check          | [x]   | [x]        | 10     |                       |
-|      | 2     | W3D1 |                                  | [x]   | [x]        | 11     |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
-|      |       |      |                                  | [ ]   | [ ]        |        |                       |
+| Date | Phase | Day  | Checkpoint built                  | Done? | Explained? | Streak | Notes / what was hard |
+| ---- | ----- | ---- | --------------------------------- | ----- | ---------- | ------ | --------------------- |
+|      | 0     | 1    | Restructure repo                  | [x]   | [x]        | 1      |                       |
+|      | 0     | 2    | Dev env + survival kit            | [x]   | [x]        | 2      |                       |
+|      | 1     | 3    | Scaffold user-service (.NET)      | [x]   | [x]        | 3      |                       |
+|      | 1     | 4    | Multi-stage build, user-service   | [x]   | [x]        | 4      |                       |
+|      | 1     | 5    | Scaffold catalog-service (.NET)   | [x]   | [x]        | 5      |                       |
+|      | 1     | W2D1 | Scaffold ingest-service (Python)  | [x]   | [x]        | 6      |                       |
+|      | 1     | W2D2 | docker-compose.yml                | [x]   | [x]        | 7      |                       |
+|      | 1     | W2D3 | Add PostgreSQL                    | [x]   | [x]        | 8      |                       |
+|      | 1     | W2D4 | Health checks + memory limits     | [x]   | [x]        | 9      |                       |
+|      | 1     | W2D5 | trivy scan + Boss Check           | [x]   | [x]        | 10     |                       |
+|      | 2     | W3D1 | user-service schema and migration | [x]   | [x]        | 11     |                       |
+|      | 2     | W3D2 | catalog schema and migration      | [x]   | [x]        | 12     |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
+|      |       |      |                                   | [ ]   | [ ]        |        |                       |
 
 _Copy the blank row as you go. From Phase 5 on, ask the mentor to expand the week into daily detail and add those rows here._
 
@@ -119,7 +119,7 @@ Record every Boss Check attempt — including the ones you don't pass first time
 
 | Phase | Badge                 | Date attempted | Passed? | Weak spots found | Re-attempt date |
 | ----- | --------------------- | -------------- | ------- | ---------------- | --------------- |
-| 1     | Container Captain     |                | [ ]     |                  |                 |
+| 1     | Container Captain     | 22/05/26       | [x]     |                  |                 |
 | 2     | Schema Smith          |                | [ ]     |                  |                 |
 | 3     | Edge Warden           |                | [ ]     |                  |                 |
 | 4     | Contract Broker       |                | [ ]     |                  |                 |

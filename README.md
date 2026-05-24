@@ -67,9 +67,12 @@ username          VARCHAR(100)     NOT NULL
 email             VARCHAR(100)     NOT NULL  UNIQUE
 password_hash     VARCHAR(100)     NOT NULL                   -- ASP.NET Core PasswordHasher output is ~84 chars, varchar(100) gives a safe margin
 profile_url       VARCHAR(2000)    NULL
-account_status    TINYINT          NOT NULL  DEFAULT 1        -- 0 = deactivated, 1 = active, 2 = banned
+account_status    TINYINT          NOT NULL  DEFAULT 1        -- 0 = deactivated, 1 = active, 2 = banned, 3 = soft deleted
 created_at        TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
 modified_at       TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+
+INDEX: idx_users_email ON users(email)
+CONSTRAINT: CK_User_AccountStatus (account_status >= 0 AND account_status <= 3)
 
 
 follows
@@ -79,6 +82,62 @@ followee_id   INT          NOT NULL  FK → users(user_id)
 created_at    TIMESTAMPTZ  NOT NULL  DEFAULT NOW()
 
 PRIMARY KEY (follower_id, followee_id)
-INDEX idx_follows_followee_id ON follows(followee_id)
+INDEX: idx_follows_followee_id ON follows(followee_id)
+
+
+channels
+─────────────────────────────────────────────────────────
+channel_id          INT              PRIMARY KEY
+user_id             INT              NOT NULL  UNIQUE
+channel_name        VARCHAR(100)     NOT NULL  UNIQUE
+channel_description VARCHAR(2000)    NULL
+channel_profile_url VARCHAR(2000)    NULL
+channel_status      SMALLINT         NOT NULL  DEFAULT 1       -- 0 = deactivated, 1 = active, 2 = banned, 3 = soft deleted
+created_at          TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+modified_at         TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+
+INDEXES (automatic from constraints):
+  PRIMARY KEY → channel_id
+  UNIQUE      → user_id
+  UNIQUE      → channel_name
+
+CONSTRAINT: CK_Channel_ChannelStatus  (channel_status >= 0 AND channel_status <= 3)
+
+
+videos
+─────────────────────────────────────────────────────────
+video_id               INT              PRIMARY KEY
+channel_id             INT              NOT NULL  FK → channels(channel_id)
+video_title            VARCHAR(100)     NOT NULL
+video_description      VARCHAR(2000)    NULL
+video_thumbnail_url    VARCHAR(2000)    NULL
+video_status           SMALLINT         NOT NULL  DEFAULT 0 -- 0 = uploading, 1 = processing, 2 = published-- 3 = unlisted, 4 = deleted
+video_size             BIGINT           NOT NULL
+video_duration_seconds INT              NOT NULL  -- seconds
+created_at             TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+modified_at            TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+
+INDEXES:
+  PRIMARY KEY → video_id
+  INDEX       → channel_id
+
+CONSTRAINT: "CK_Video_VideoStatus" (video_status >= 0 AND video_status <= 4)
+
+video_assets
+─────────────────────────────────────────────────────────
+video_asset_id      INT              PRIMARY KEY
+video_id            INT              NOT NULL  FK → videos(video_id)
+video_quality       INT              NOT NULL  -- vertical pixels: 360, 720, 1080
+manifest_url        VARCHAR(2000)    NOT NULL
+video_asset_size    BIGINT           NOT NULL  -- bytes
+video_asset_bitrate INT              NOT NULL  -- kbps
+video_asset_status  SMALLINT         NOT NULL  DEFAULT 0 -- 0 = initiated, 1 = success, 2 = failed, 3 = deleted
+created_at          TIMESTAMPTZ      NOT NULL  DEFAULT NOW()
+
+INDEXES:
+  PRIMARY KEY → video_asset_id
+  INDEX       → video_id
+
+CONSTRAINT: "CK_VideoAsset_VideoAssetStatus" (video_asset_status >= 0 AND video_asset_status <= 3)
 
 ```

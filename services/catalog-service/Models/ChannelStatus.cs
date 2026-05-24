@@ -1,6 +1,6 @@
-namespace user_service.Models
+namespace catalog_service.Models
 {
-    public enum AccountStatus
+    public enum ChannelStatus
     {
         Deactivated = 0,
         Active = 1,

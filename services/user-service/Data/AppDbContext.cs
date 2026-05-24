@@ -40,6 +40,9 @@ namespace user_service.Data
             modelBuilder.Entity<User>().Property(u => u.ModifiedAt).HasDefaultValueSql("NOW()");
             modelBuilder.Entity<User>().Property(u => u.AccountStatus).HasDefaultValueSql("1");
 
+            //configure constraints
+            modelBuilder.Entity<User>(u => {u.ToTable(t => t.HasCheckConstraint("CK_User_AccountStatus", "account_status >= 0 AND account_status <= 3"));});
+
             //for follows
             //configure datatypes
             modelBuilder.Entity<Follow>().Property(f => f.FollowerId).HasColumnType("int"); 
